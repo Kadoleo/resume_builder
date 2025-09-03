@@ -1,6 +1,7 @@
 // Simple wrapper to export a DOM node to PDF using html2pdf.js
 // Options tuned for A4 with reasonable margins
 export async function exportNodeToPdf(node: HTMLElement, filename = "resume.pdf") {
+  // @ts-ignore
   const html2pdf = (await import("html2pdf.js")).default;
   const opt = {
     margin: [10, 10, 10, 10],
