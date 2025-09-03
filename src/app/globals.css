@@ -22,5 +22,24 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Focus styles */
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #2563EB33 inset;
+  border-color: #2563EB;
+}
+
+/* Print only the preview card */
+@media print {
+  body * { visibility: hidden; }
+  #resume-preview, #resume-preview * { visibility: visible; }
+  #resume-preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 }
